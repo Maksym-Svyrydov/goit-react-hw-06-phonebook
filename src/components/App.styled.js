@@ -13,9 +13,15 @@ export const Container = styled.div`
 `;
 export const PhoneBook = styled.h1`
   padding: 0px;
-  margin-bottom: 0px;
+  ${'' /* margin-bottom: 0px; */}
   letter-spacing: 2 px;
   color: rgba(50, 57, 65, 1);
+  @media screen and (max-width: 1023px) {
+    font-size: 32px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 28px;
+  }
 `;
 export const Title = styled.h2`
   display: flex;
@@ -23,4 +29,10 @@ export const Title = styled.h2`
   margin: 1px;
 
   color: rgba(50, 57, 65, 1);
+  @media screen and (max-width: 1023px) {
+    font-size: 28px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 24px;
+  }
 `;
