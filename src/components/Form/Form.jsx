@@ -1,20 +1,37 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, InputName, InputNumber, InputBtn } from './Form.styled';
 import { addContacts } from 'redux/contatctsSlice';
 import { nanoid } from '@reduxjs/toolkit';
-// import { getContacts } from 'redux/selectors';
+import { getContacts } from 'redux/selectors';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ContactForm = () => {
-  // const contacts = useSelector(getContacts);
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     const form = e.target;
+    e.preventDefault();
     const name = form.elements.name.value;
     const number = form.elements.number.value;
     const newContatact = { id: nanoid(), name: name, number: number };
-    dispatch(addContacts(newContatact));
-    e.preventDefault();
+
+    if (contacts.findIndex(contact => name === contact.name) !== -1) {
+      return toast.error(`${name} is already in contacts.`, {
+        position: 'top-right',
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+        fontSize: 3,
+      });
+    } else {
+      dispatch(addContacts(newContatact));
+    }
     form.reset();
   };
 
