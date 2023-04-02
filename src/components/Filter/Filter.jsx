@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-// import { getFilter } from 'redux/selectors';
+import { getFilter } from 'redux/selectors';
 import { filterContacts } from 'redux/filterSlice';
 
 import { FilterContaner, FilterInput } from './Filter.styled';
 
 const Filter = () => {
-  const value = useSelector(state => state.filter.search);
+  const value = useSelector(getFilter);
   const dispatch = useDispatch();
   const handleChange = e => {
     const { value } = e.target;

@@ -6,14 +6,12 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  ${'' /* outline: 1px solid tomato; */}
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   border: 6px solid rgba(50, 57, 65, 1);
   letter-spacing: 1 px;
   margin-bottom: 10px;
-  ${'' /* background: #c4c4c4; */}
 `;
 export const InputHeader = styled.h1`
   font-weigh: 400;

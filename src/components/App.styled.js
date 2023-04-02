@@ -13,7 +13,6 @@ export const Container = styled.div`
 `;
 export const PhoneBook = styled.h1`
   padding: 0px;
-  ${'' /* margin-bottom: 0px; */}
   letter-spacing: 2 px;
   color: rgba(50, 57, 65, 1);
   @media screen and (max-width: 1023px) {
