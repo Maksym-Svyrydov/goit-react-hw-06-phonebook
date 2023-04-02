@@ -9,9 +9,10 @@ import { List, Item, Text, DeleteBtn } from './ContactList.styled';
 
 const ContactList = () => {
   const contacts = useSelector(getContacts);
+
   const filterValue = useSelector(getFilter);
   const dispatch = useDispatch();
-  // console.log(contacts);
+  console.log(contacts);
   // console.log(filterValue);
   const filterContactsList = useMemo(() => {
     return contacts.filter(contact =>
